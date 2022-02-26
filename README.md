@@ -6,6 +6,8 @@ In the project directory, you can run:
 
 ### `npm start`
 
+You must install mongoDB first from this link https://www.mongodb.com/try/download/community
+
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
