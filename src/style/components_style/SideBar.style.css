@@ -1,0 +1,60 @@
+.side_bar {
+    background-color: var(--bg-dark-60);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.side_bar_buttons_section {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.side_bar_buttons_section button {
+    height: 40px;
+    background-color: rgba(0, 0, 0, .3);
+    color: var(--bg-dark-30);
+    position: relative;
+}
+
+.side_bar_buttons_section button:hover {
+    color: var(--bg-white);
+    cursor: pointer;
+    border-left: 2px solid var(--bg-white);
+}
+
+.side_bar_buttons_section button::after {
+    content: attr(data-info);
+    background-color: var(--bg-dark-60);
+    position: absolute;
+    width: max-content;
+    top: 50%;
+    left: calc(100% + 2px);
+    transform: translateY(-50%);
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bolder;
+    font-size: .7rem;
+    color: var(--bg-white);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 999;
+}
+
+.side_bar_buttons_section button:hover::after {
+    transition: opacity .3s .5s ease-in-out;
+    opacity: .8;
+}
+
+.side_bar_logo_section img {
+    height: 40px;
+    padding: 3px;
+}
+
+.selected_side_bar_button {
+    color: var(--bg-white) !important;
+    cursor: pointer;
+    border-left: 2px solid var(--bg-white);
+    pointer-events: none;
+}

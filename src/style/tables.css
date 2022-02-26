@@ -1,0 +1,32 @@
+.table {
+    min-width: 98%;
+    max-width: 98%;
+    margin: auto;
+    position: relative;
+}
+
+.table th {
+    background-color: var(--bg-primary);
+    font-weight: 600;
+    font-size: .8rem;
+    color: var(--bg-white);
+    padding: 5px 10px;
+    text-transform: capitalize;
+}
+
+.table td {
+    background-color: var(--bg-neutral-50);
+    padding: 5px 2px;
+    font-weight: 500;
+    font-size: .8rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.table tbody tr:hover td {
+    background-color: var(--bg-dark-30);
+}
+
+.table_container {
+    position: relative;
+}

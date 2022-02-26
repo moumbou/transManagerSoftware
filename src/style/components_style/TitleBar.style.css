@@ -1,0 +1,48 @@
+.title_bar {
+    background-color: var(--bg-dark);
+    display: flex;
+    justify-content: space-between;
+    -webkit-app-region: drag
+}
+
+.logo_container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--bg-white);
+}
+
+.logo_container img {
+    height: 20px;
+}
+
+.logo_container p {
+    font-family: 'Staatliches';
+    font-size: .7em;
+}
+
+.logo_container p span {
+    font-family: 'Smooch';
+}
+
+.title_bar_buttons_contaner button {
+    height: 100%;
+    width: 30px;
+    background-color: rgba(255, 255, 255, .5);
+    cursor: pointer;
+    -webkit-app-region: no-drag
+}
+
+.title_bar_buttons_contaner button:hover {
+    background-color: var(--bg-white);
+}
+
+.title_bar_buttons_contaner button:nth-of-type(1):hover {
+    background-color: var(--bg-primary);
+    color: var(--bg-white);
+}
+
+.title_bar_buttons_contaner button:nth-of-type(4):hover {
+    background-color: var(--bg-warning);
+    color: var(--bg-white);
+}

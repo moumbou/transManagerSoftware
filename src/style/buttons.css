@@ -1,0 +1,85 @@
+.btn_100 {
+    width: 100%;
+}
+
+.btn_mt_5 {
+    margin-top: 5px;
+}
+
+.btn_disabled {
+    pointer-events: none;
+    opacity: .5;
+}
+
+.btn_primary {
+    background-color: var(--bg-primary);
+    padding: 5px 10px;
+    color: var(--bg-white);
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: .7rem;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    border: 2px solid var(--bg-primary);
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.btn_primary:hover {
+    color: var(--bg-primary);
+    background-color: transparent;
+}
+
+.btn_warning {
+    background-color: var(--bg-warning);
+    padding: 5px 10px;
+    color: var(--bg-white);
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: .7rem;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    border: 2px solid var(--bg-warning);
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.btn_warning:hover {
+    color: var(--bg-warning);
+    background-color: transparent;
+}
+
+.btn_success {
+    background-color: var(--bg-success);
+    padding: 5px 10px;
+    color: var(--bg-white);
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: .7rem;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    border: 2px solid var(--bg-success);
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.btn_success:hover {
+    color: var(--bg-success);
+    background-color: transparent;
+}
+
+.add_button {
+    background-color: var(--bg-success);
+    color: var(--bg-white);
+    border: 1px solid var(--bg-success);
+    transition: all .3s ease-in-out;
+}
+
+.add_button:hover {
+    background-color: var(--bg-white);
+    color: var(--bg-success);
+}
+
+.add_button:hover span {
+    border-left: 2px solid var(--bg-success);
+}

@@ -1,0 +1,76 @@
+.error_success_modal {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 10px);
+  border-radius: 5px;
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+  z-index: 9999;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, .5); */
+  pointer-events: none;
+}
+
+.error_success_modal_hide {
+    animation: hide_message .5s ease-in-out forwards;
+}
+
+@keyframes hide_message {
+    from {
+        opacity: 1;
+    } to {
+        opacity: 0;
+    }
+}
+
+
+.error_success_modal_icon_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  background-color: var(--bg-dark-50);
+  border-radius: 5px 0 0 5px;
+  z-index: 999;
+  opacity: 0;
+}
+
+.error_success_modal_icon_container_show {
+  animation: opacity_1 0.5s ease-in-out forwards;
+}
+
+@keyframes opacity_1 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.error_success_modal_message_container {
+  border-radius: 0 5px 5px 0;
+  font-size: 0.8rem;
+  font-weight: bolder;
+  background-color: var(--bg-dark-50);
+  color: var(--bg-white);
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  position: relative;
+  transform: translateX(-200%);
+}
+
+.error_success_modal_message_container_show {
+  animation: show 0.5s 0.5s ease-in-out forwards;
+}
+
+@keyframes show {
+  from {
+    transform: translateX(-200%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}

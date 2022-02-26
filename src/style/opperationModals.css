@@ -1,0 +1,27 @@
+.more_opption_modal {
+    min-width: 200px;
+    background-color: white;
+    border-radius: 2px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.more_opption_modal li {
+    padding: 10px 5px;
+    font-weight: bolder;
+    font-size: .8rem;
+    background-color: var(--bg-neutral-50);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.more_opption_modal li:hover {
+    background-color: var(--bg-dark-30);
+    color: var(--bg-neutral-50);
+}

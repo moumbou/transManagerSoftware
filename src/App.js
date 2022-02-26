@@ -1,56 +1,55 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import { useDispatch } from 'react-redux';
+import MainSide from './components/MainSide';
+import MoreOpptionsModalSituations from './components/MainSideContent/dashboard/MoreOpptionsModalSituations';
+import MoreOpptionsModal from './components/MainSideContent/driverManager/MoreOpptionsModal';
+import MoreOpptionsModalTruck from './components/MainSideContent/truckManager/MoreOpperationsModalTruck';
+import SideBar from './components/SideBar';
+import TitleBar from './components/TitleBar';
+import { requests } from './constants/IpcRendererConstants';
+import { setDrivers } from './features/pages/DriverPageSlice';
+import { setInfoMessage, setTargetMessage } from './features/pages/MessageModel';
+import { setCamionArray, setSituationsValue } from './features/pages/SituationPageSlice';
+import { setTrucks } from './features/pages/TruckPageSlice';
+import './style/App.css';
+
+const { ipcRenderer } = window.require('electron')
 
 function App() {
+  const dispatch = useDispatch()
+
+  ipcRenderer.on(requests.MESSAGE_SEND, (e, args) => {
+    dispatch(setInfoMessage({
+      success: args.success,
+      msg: args.msg
+    }))
+    dispatch(setTargetMessage("message_modal"))
+  })
+  ipcRenderer.on(requests.DISPLAY_DRIVERS, (e, args) => {
+    dispatch(setDrivers(JSON.parse(args)))
+  })
+  ipcRenderer.on(requests.DISLPAY_TRUCKS, (e, args) => {
+    dispatch(setTrucks(JSON.parse(args)))
+  })
+  ipcRenderer.on(requests.GET_AFFILIED_TRUCKS, (e, args) => {
+    dispatch(setCamionArray(JSON.parse(args)))
+  })
+  ipcRenderer.on(requests.GET_SITUATIONS, (e, args) => {
+    dispatch(setSituationsValue(JSON.parse(args)))
+  })
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+      <TitleBar />
+      <div className='app_container'>
+        <SideBar />
+        <MainSide />
+      </div>
+
+      <MoreOpptionsModal />
+      <MoreOpptionsModalTruck />
+      <MoreOpptionsModalSituations />
     </div>
   );
 }

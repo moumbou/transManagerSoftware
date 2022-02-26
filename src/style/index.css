@@ -1,0 +1,82 @@
+:root {
+  --bg-dark: #343A40;
+  --bg-dark-60: #212224;
+  --bg-dark-50: #393B3F;
+  --bg-dark-40: #60636A;
+  --bg-dark-30: #A4A8AE;
+  --bg-white: #F2F3F5;
+  --bg-success: #36B368;
+  --bg-warning: #EA5230;
+  --bg-primary: #007BFF;
+  --bg-neutral-50: #F2F3F5;
+  --bg-neutral-60: #D5D8DF;
+  --bg-purple: #6610F2;
+  --title-bar-height: 30px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(0, 123, 255, .5);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bg-primary);
+}
+
+@font-face {
+  font-family: "Staatliches";
+  src: local("Staatliches-Regular"),
+  url("../Fonts/Staatliches-Regular.ttf") format("truetype");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Smooch";
+  src: local("Smooch-Regular"),
+  url("../Fonts/Smooch-Regular.ttf") format("truetype");
+  font-weight: bold;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button, input {
+  border: none;
+  outline: none;
+}
+
+ul, li {
+  list-style: none;
+}
